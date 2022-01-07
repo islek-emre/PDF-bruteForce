@@ -3,6 +3,11 @@
 import pikepdf
 from tqdm import tqdm
 
+print ("---------PDF bruteForce by Emre ISLEK--------")
+print ("Put the py file, the wordlist file and the pdf file  you want") 
+print ("to crack the password for in  the same folder. Change the name of the pdf file to locked. ")
+print ("Change the name of your wordlist file to wordlist. You can work with large files like rockyou or create your own wordlist.")
+
 passwords = [ line.strip() for line in open("wordlist.txt") ]
 for password in tqdm(passwords, "Decrypting PDF"):
     try:
