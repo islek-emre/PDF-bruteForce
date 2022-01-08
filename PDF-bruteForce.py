@@ -10,11 +10,11 @@ print ("Change the name of your wordlist file to wordlist. You can work with lar
 passwords = [ line.strip() for line in open("wordlist.txt") ]
 for password in tqdm(passwords, "Decrypting PDF"):
     try:
-        # open PDF file
+        # open PDF
         with pikepdf.open("locked.pdf", password=password) as pdf:
-            # Password decrypted successfully, break out of the loop
+            # Password decrypted successfully, break out of the script loop
             print("[+] Password found:", password)
             break
     except pikepdf._qpdf.PasswordError as e:
-        # wrong password, just continue in the loop
+        # wrong password, continue in the script loop
         continue
